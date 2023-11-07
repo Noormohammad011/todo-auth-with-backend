@@ -1,38 +1,30 @@
-# Book Catalog Backend
+# Todo App with Authentication and Backend
 
 <hr>
 
 ## API Endpoints
 
-### Live Link: https://book-catalog-backend-lac.vercel.app/
+### Live Link: https://task-app-backend-six.vercel.app/
 
-### Postman Documentation: https://documenter.getpostman.com/view/12490462/2s946fesvf
+### Bootstrapping url: https://github.com/Noormohammad011/node-express-bootstrap
 
 ### Application Routes:
 
-## Main part
 
 ### Auth (User)
 
-    - Route: https://book-catalog-backend-lac.vercel.app/api/v1/auth/login (POST)
-    - Route: https://book-catalog-backend-lac.vercel.app/api/v1/auth/signup (POST)
-    - Route: https://book-catalog-backend-lac.vercel.app/api/v1/auth/refresh-token (POST)
-    - Route: https://book-catalog-backend-lac.vercel.app/api/v1/auth/me (get)
-    - Route: https://book-catalog-backend-lac.vercel.app/api/v1/auth/reading-list (POST)
-    - Route: https://book-catalog-backend-lac.vercel.app/api/v1/auth/reading-list (PATCH)
-    - Route: https://book-catalog-backend-lac.vercel.app/api/v1/auth/wishlist (POST)
-    - Route: https://book-catalog-backend-lac.vercel.app/api/v1/auth/wishlist/:bookId (DELETE)
+    - Route: https://task-app-backend-six.vercel.app/api/v1/auth/login (POST)
+    - Route: https://task-app-backend-six.vercel.app/api/v1/auth/signup (POST)
+    - Route: https://task-app-backend-six.vercel.app/api/v1/auth/refresh-token (POST)
+    - Route: https://task-app-backend-six.vercel.app/api/v1/auth/me (get)
+    - Route: https://task-app-backend-six.vercel.app/api/v1/auth/logout (get)
+    - Route: https://task-app-backend-six.vercel.app/api/v1/auth/reset-password (post)
+   
 
-#### Books
+#### Todo-tasks-route
 
-    - Route:https://book-catalog-backend-lac.vercel.app/api/v1/book (GET)
-    - Route:https://book-catalog-backend-lac.vercel.app/api/v1/book/:id (GET)
-    - Route:https://book-catalog-backend-lac.vercel.app/api/v1/book (POST)
-    - Route:https://book-catalog-backend-lac.vercel.app/api/v1/book/:id (PATCH)
-    - Route:https://book-catalog-backend-lac.vercel.app/api/v1/book/:id (DELETE)
-
-#### Reviews
-
-    - Route:https://book-catalog-backend-lac.vercel.app/api/v1/reviews (POST)
-    - Route:https://book-catalog-backend-lac.vercel.app/api/v1/reviews/:id (GET)
-"# todo-auth-with-backend" 
+    - Route:https://task-app-backend-six.vercel.app/api/v1/tasks (GET -> Protected)
+    - Route:https://task-app-backend-six.vercel.app/api/v1/tasks/:id (GET -> Protected)
+    - Route:https://task-app-backend-six.vercel.app/api/v1/tasks (POST -> Protected)
+    - Route:https://task-app-backend-six.vercel.app/api/v1/tasks/:id (PATCH -> Protected)
+    - Route:https://task-app-backend-six.vercel.app/api/v1/tasks/:id (DELETE -> Protected)
