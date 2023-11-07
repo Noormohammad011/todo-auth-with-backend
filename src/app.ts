@@ -9,7 +9,10 @@ import config from './config/index';
 const app: Application = express();
 
 const corsOptions = {
-  origin: `${config.frontend_url}`,
+  origin: [
+    'http://localhost:3000',
+    'https://todo-with-auth-frontend.vercel.app',
+  ],
   credentials: true,
 };
 
