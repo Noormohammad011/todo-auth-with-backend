@@ -9,10 +9,7 @@ import config from './config/index';
 const app: Application = express();
 
 const corsOptions = {
-  origin: [
-    'http://localhost:3000',
-    `${config.frontend_url}`,
-  ],
+  origin: `${config.frontend_url}`,
   credentials: true,
 };
 
