@@ -4,19 +4,17 @@ import express, { Application, NextFunction, Request, Response } from 'express';
 import httpStatus from 'http-status';
 import globalErrorHandler from './app/middlewares/globalErrorHandler';
 import routes from './app/routes';
-import config from './config/index';
+import config from './config';
 
 const app: Application = express();
 
-const corsOptions = {
-  origin: [
-    'http://localhost:3000',
-    'https://todo-with-auth-frontend.vercel.app',
-  ],
-  credentials: true,
-};
-
-app.use(cors(corsOptions));
+// Middlewares
+app.use(
+  cors({
+    credentials: true,
+    origin: config.client_url,
+  }),
+);
 app.use(cookieParser());
 
 //parser
