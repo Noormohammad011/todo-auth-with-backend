@@ -85,17 +85,17 @@ const refreshToken = async (token: string): Promise<IRefreshTokenResponse> => {
   };
 };
 
-const logoutUser = async (
-  userId: string,
-): Promise<IRefreshTokenResponse | null> => {
-  const user = await User.findById(userId);
-  if (!user) {
-    throw new ApiError(httpStatus.NOT_FOUND, 'User not found');
-  }
-  return {
-    accessToken: '',
-  };
-};
+// const logoutUser = async (
+//   userId: string,
+// ): Promise<IRefreshTokenResponse | null> => {
+//   const user = await User.findById(userId);
+//   if (!user) {
+//     throw new ApiError(httpStatus.NOT_FOUND, 'User not found');
+//   }
+//   return {
+//     accessToken: '',
+//   };
+// };
 
 const resetPassword = async (
   userId: string,
@@ -162,7 +162,7 @@ export const UserService = {
   loginUser,
   refreshToken,
   userProfile,
-  logoutUser,
+  // logoutUser,
   resetPassword,
   // deleteUser,
 };

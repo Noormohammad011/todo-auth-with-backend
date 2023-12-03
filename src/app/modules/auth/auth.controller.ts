@@ -50,16 +50,16 @@ const refreshToken = catchAsync(async (req: Request, res: Response) => {
 
   const result = await UserService.refreshToken(refreshToken);
 
-  const cookieOptions: {
-    secure: boolean;
-    httpOnly: boolean;
-    sameSite?: 'none' | undefined;
-  } = {
-    secure: true,
-    httpOnly: true,
-    sameSite: 'none',
-  };
-  res.cookie('refreshToken', refreshToken, cookieOptions);
+  // const cookieOptions: {
+  //   secure: boolean;
+  //   httpOnly: boolean;
+  //   sameSite?: 'none' | undefined;
+  // } = {
+  //   secure: true,
+  //   httpOnly: true,
+  //   sameSite: 'none',
+  // };
+  // res.cookie('refreshToken', refreshToken, cookieOptions);
 
   sendResponse<IRefreshTokenResponse>(res, {
     statusCode: 200,
@@ -69,28 +69,28 @@ const refreshToken = catchAsync(async (req: Request, res: Response) => {
   });
 });
 
-const logoutUser = catchAsync(async (req: Request, res: Response) => {
-  const { _id: userId } = req.user as { _id: string };
-  const result = await UserService.logoutUser(userId);
+// const logoutUser = catchAsync(async (req: Request, res: Response) => {
+//   const { _id: userId } = req.user as { _id: string };
+//   const result = await UserService.logoutUser(userId);
 
-  const cookieOptions: {
-    secure: boolean;
-    httpOnly: boolean;
-    sameSite?: 'none' | undefined;
-  } = {
-    secure: true,
-    httpOnly: true,
-    sameSite: 'none',
-  };
+//   const cookieOptions: {
+//     secure: boolean;
+//     httpOnly: boolean;
+//     sameSite?: 'none' | undefined;
+//   } = {
+//     secure: true,
+//     httpOnly: true,
+//     sameSite: 'none',
+//   };
 
-  res.clearCookie('refreshToken', cookieOptions);
-  sendResponse<IRefreshTokenResponse>(res, {
-    statusCode: 200,
-    success: true,
-    message: 'User logged out successfully!',
-    data: result,
-  });
-});
+//   res.clearCookie('refreshToken', cookieOptions);
+//   sendResponse<IRefreshTokenResponse>(res, {
+//     statusCode: 200,
+//     success: true,
+//     message: 'User logged out successfully!',
+//     data: result,
+//   });
+// });
 
 const userProfile = catchAsync(async (req: Request, res: Response) => {
   const { _id: userId } = req.user as { _id: string };
@@ -139,7 +139,7 @@ export const AuthController = {
   loginUser,
   refreshToken,
   userProfile,
-  logoutUser,
+  // logoutUser,
   resetPassword,
   // deleteUser,
 };
